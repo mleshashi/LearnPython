@@ -1,4 +1,4 @@
-from turtle import Turtle, Screen
+from turtle import Turtle, Screen, colormode
 import random
 
 my_turtle = Turtle()
@@ -15,18 +15,28 @@ my_turtle = Turtle()
 #     my_turtle.pendown()
 
 
-colours = [
-    "CornflowerBlue",
-    "DarkOrchid",
-    "IndianRed",
-    "DeepSkyBlue",
-    "LightSeaGreen",
-    "wheat",
-    "SlateGray",
-    "SeaGreen",
-]
+# colours = [
+#     "CornflowerBlue",
+#     "DarkOrchid",
+#     "IndianRed",
+#     "DeepSkyBlue",
+#     "LightSeaGreen",
+#     "wheat",
+#     "SlateGray",
+#     "SeaGreen",
+# ]
 
+
+colormode(255)
 my_turtle.pen(pensize=3)
+
+
+def random_color():
+    r = random.randint(0, 255)
+    g = random.randint(0, 255)
+    b = random.randint(0, 255)
+    random_color = (r, g, b)
+    return random_color
 
 
 def draw_shape(number_of_side, side_length):
@@ -37,5 +47,5 @@ def draw_shape(number_of_side, side_length):
 
 
 for number_of_side in range(3, 11):
-    my_turtle.color(random.choice(colours))
+    my_turtle.color(random_color())
     draw_shape(number_of_side, 100)
